@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Tugas Pemweb 3</title>
+    </header>
+    <body>
+        <div>
+            <h1>Tugas pemweb 3</h1>
+            <ul>
+                <li>
+                    <p>Membuat teks ke dalam id/class html tertentu</p>
+                </li>
+                <li>
+                    <p>Membuat element html ke dalam id/class html tertentu</p>
+                </li>
+                <li>
+                    <p>Membuat element yang dinamis berdasarkan event handler tertentu, contoh : button diclick berubah halaman pengumpulan tugas</p>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <h2>PENGERJAAN TUGAS</h2>
+        </div>
+        <div>
+            <p class="teks"><b>Teks ini nanti akan diganti menggunakan script JS</b></p>
+        </div>
+        <br>
+        <div class="elemen">
+            <p><b>Di bawah teks ini akan ada element baru yang ditambahkan menggunakan script JS</b></p>
+        </div>
+        <br>
+        <div>
+            <p><b>Di Bawah merupakan button static yang akan dimodifikasi oleh script JS untuk mengakses GCR</b></p>
+            <form class="event" action="https://classroom.google.com">
+                <input type="submit" value="Pergi ke Pengumpulan Tugas"/>
+            </form>
+        </div>
+        <script>
+            const tekss = document.getElementsByClassName("teks");
+            tekss[0].innerHTML = "Teks ini telah diganti menggunakan script JS";
+            const newtekss = document.createElement("p");
+            const newtekssText = document.createTextNode("Teks ini ditambahkan menggunakan script JS");
+            newtekss.appendChild(newtekssText);
+            tekss[0].appendChild(newtekss);
+
+            const elementss = document.getElementsByClassName("elemen");
+            const newElementss = document.createElement("p");
+            const newContentss = document.createTextNode("Element baru telah ditambahkan menggunakan script JS yaitu p");
+            newElementss.appendChild(newContentss);
+            elementss[0].appendChild(newElementss);
+
+            const eventss = document.getElementsByClassName("event");
+            eventss[0].addEventListener("click", function(event){
+                event.preventDefault();
+                window.location.href = "https://classroom.google.com/c/NDk3NzQ4MDU2Mjgz/a/NDkxNDIzNTk3NzQx/details";
+            });
+
+
+        </script>
+    </body>
+</html>
